@@ -3,253 +3,455 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tanu Vishwakarma | Full-Stack Developer</title>
+  <title>Tanu Vishwakarma | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0d1117;
-      --card-bg: #161b22;
-      --border: #30363d;
-      --accent: #58a6ff;
-      --text: #c9d1d9;
-      --text-bright: #f0f6fc;
-      --text-muted: #8b949e;
+      --bg: #0b0f19;
+      --card-bg: rgba(22, 27, 46, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #64ffda;
+      --accent-glow: rgba(100, 255, 218, 0.15);
+      --text: #94a3b8;
+      --text-bright: #f1f5f9;
+      --text-muted: #64748b;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      cursor: none; /* Hide default cursor for custom cursor effect */
     }
 
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      padding: 0 1.5rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    .container {
-      max-width: 860px;
+    /* Custom Cursor */
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.2s ease;
+    }
+
+    .cursor-outline {
+      width: 38px;
+      height: 38px;
+      border: 1.5px solid var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    }
+
+    .cursor-hover {
+      width: 55px;
+      height: 55px;
+      background-color: var(--accent-glow);
+      border-color: transparent;
+    }
+
+    /* Layout Wrapper */
+    .page-wrapper {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 0;
-    }
-
-    /* Header / Hero */
-    header {
-      padding: 3rem 0 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    h1 {
-      color: var(--text-bright);
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .tagline {
-      font-size: 1.15rem;
-      color: var(--accent);
-      font-family: 'Fira Code', monospace;
-      margin-bottom: 1rem;
-    }
-
-    .bio {
-      color: var(--text-muted);
-      max-width: 650px;
-      font-size: 1rem;
-    }
-
-    /* Navigation / Quick Links */
-    .links-bar {
+      padding: 0 2rem;
       display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4rem;
+      position: relative;
     }
 
-    .links-bar a {
-      color: var(--text-bright);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-family: 'Fira Code', monospace;
-      padding: 0.4rem 0.8rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--card-bg);
-      transition: all 0.2s ease;
-    }
-
-    .links-bar a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* Sections */
-    section {
-      margin-top: 3.5rem;
-    }
-
-    h2 {
-      color: var(--text-bright);
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .skill-badge {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text-bright);
-      padding: 0.4rem 0.9rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-family: 'Fira Code', monospace;
-    }
-
-    /* Project Cards */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
+    /* Left Column: Sticky Profile / Photo / Bio */
+    .left-sidebar {
+      width: 45%;
+      position: sticky;
+      top: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      padding: 5rem 0;
     }
 
-    .project-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
+    /* Photo Frame with Slide & Tilt */
+    .photo-card-wrapper {
+      perspective: 1000px;
+      width: 190px;
+      height: 230px;
+      margin-bottom: 2rem;
     }
 
-    .project-title {
+    .photo-card {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      border: 1.5px solid var(--card-border);
+      background: var(--card-bg);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+      filter: grayscale(20%);
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.08) translateY(-4px);
+      filter: grayscale(0%);
+    }
+
+    .photo-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(11, 15, 25, 0.8));
+      pointer-events: none;
+    }
+
+    .intro-header h1 {
+      font-size: 2.7rem;
       color: var(--text-bright);
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
       margin-bottom: 0.5rem;
     }
 
-    .project-desc {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-tech {
-      font-family: 'Fira Code', monospace;
-      font-size: 0.75rem;
+    .intro-header .title {
+      font-size: 1.15rem;
       color: var(--accent);
-      margin-bottom: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
     }
 
-    .project-link {
-      align-self: flex-start;
-      color: var(--text-bright);
-      font-size: 0.85rem;
+    .intro-header .bio-short {
+      color: var(--text);
+      font-size: 1rem;
+      max-width: 380px;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .social-links a {
+      color: var(--text-muted);
       text-decoration: none;
-      font-weight: 600;
-      border-bottom: 1px dashed var(--accent);
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
     }
 
-    .project-link:hover {
+    .social-links a:hover {
       color: var(--accent);
+      transform: translateY(-2px);
     }
 
-    /* Footer */
-    footer {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--text-muted);
+    /* Right Column: Scrollable Content */
+    .right-content {
+      width: 52%;
+      padding: 5rem 0;
+    }
+
+    .section-block {
+      margin-bottom: 5rem;
+    }
+
+    .section-title {
       font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .section-title::after {
+      content: '';
+      height: 1px;
+      flex-grow: 1;
+      background: var(--card-border);
+    }
+
+    .about-text {
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Skills Badges Grid */
+    .skills-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill-tag {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-bright);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: 'JetBrains Mono', monospace;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.25s ease;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px var(--accent-glow);
+    }
+
+    /* Project Cards with Hover Slide Effect */
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+    }
+
+    .project-card:hover {
+      border-color: rgba(100, 255, 218, 0.4);
+      transform: translateX(8px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card h3 {
+      color: var(--text-bright);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .project-card p {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .stack-tag {
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Responsive Mobile Layout */
+    @media (max-width: 900px) {
+      * { cursor: auto !important; }
+      .cursor-dot, .cursor-outline { display: none; }
+      .page-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1.25rem;
+      }
+      .left-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 3rem 0 1rem;
+      }
+      .right-content {
+        width: 100%;
+        padding: 1rem 0 3rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>Tanu Vishwakarma</h1>
-      <p class="tagline">&gt; Full-Stack Developer &amp; Tech Enthusiast</p>
-      <p class="bio">
-        Passionate about crafting scalable full-stack applications, clean user interfaces, and robust backend systems using React, Django, Python, and Java.
-      </p>
+  <!-- Custom Cursor Elements -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
 
-      <div class="links-bar">
-        <a href="https://github.com/tnuislostq" target="_blank">GitHub</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="mailto:your-email@example.com">Email</a>
-      </div>
-    </header>
-
-    <!-- Tech Stack -->
-    <section>
-      <h2>// Skills &amp; Technologies</h2>
-      <div class="skills-grid">
-        <span class="skill-badge">JavaScript</span>
-        <span class="skill-badge">Python</span>
-        <span class="skill-badge">Java</span>
-        <span class="skill-badge">React</span>
-        <span class="skill-badge">Django</span>
-        <span class="skill-badge">HTML5 / CSS3</span>
-        <span class="skill-badge">SQL</span>
-        <span class="skill-badge">Git &amp; GitHub</span>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section>
-      <h2>// Featured Projects</h2>
-      <div class="projects-grid">
-        
-        <div class="project-card">
-          <div>
-            <div class="project-title">Adaptive Learning Platform</div>
-            <div class="project-desc">A full-stack system designed to assess skills dynamically and deliver tailored learning paths.</div>
-            <div class="project-tech">React • Django • SQL</div>
+  <div class="page-wrapper">
+    <!-- Left Column (Fixed / Sticky) -->
+    <aside class="left-sidebar">
+      <div>
+        <div class="photo-card-wrapper" id="photo-wrapper">
+          <div class="photo-card" id="photo-card">
+            <!-- Replace with your own profile image path or URL -->
+            <img src="https://avatars.githubusercontent.com/u/tnuislostq" alt="Tanu Vishwakarma" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80'" />
           </div>
-          <a href="https://github.com/tnuislostq" class="project-link" target="_blank">View Code &rarr;</a>
+        </div>
+
+        <div class="intro-header">
+          <h1>Tanu Vishwakarma</h1>
+          <div class="title">&gt; Full-Stack Developer</div>
+          <p class="bio-short">
+            Building intuitive digital experiences and robust full-stack applications with modern web technologies.
+          </p>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/tnuislostq" target="_blank">GH</a>
+        <a href="https://linkedin.com" target="_blank">LI</a>
+        <a href="mailto:your-email@example.com">EM</a>
+      </div>
+    </aside>
+
+    <!-- Right Column (Scrollable Content) -->
+    <main class="right-content">
+      
+      <!-- About -->
+      <section class="section-block">
+        <div class="section-title">01 // About</div>
+        <p class="about-text">
+          I'm a full-stack developer focused on building scalable, reliable applications and elegant interfaces. My approach blends systematic logic with responsive, clean visual design.
+        </p>
+        <p class="about-text">
+          I enjoy solving architecture challenges across both frontend client interactions and backend API services, continuously learning and adopting modern engineering standards.
+        </p>
+      </section>
+
+      <!-- Skills -->
+      <section class="section-block">
+        <div class="section-title">02 // Technologies</div>
+        <div class="skills-group">
+          <span class="skill-tag">JavaScript (ES6+)</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">HTML5 / CSS3</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Git &amp; GitHub</span>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section-block">
+        <div class="section-title">03 // Projects</div>
+
+        <div class="project-card">
+          <h3>Adaptive Skill Audit System <span>↗</span></h3>
+          <p>An intelligent platform engineered to assess developer competencies dynamically and recommend structured learning paths.</p>
+          <div class="project-stack">
+            <span class="stack-tag">#React</span>
+            <span class="stack-tag">#Django</span>
+            <span class="stack-tag">#PostgreSQL</span>
+          </div>
         </div>
 
         <div class="project-card">
-          <div>
-            <div class="project-title">Web Application Architecture</div>
-            <div class="project-desc">A modular web app featuring RESTful APIs, authentication workflows, and relational data management.</div>
-            <div class="project-tech">Python • JavaScript • CSS3</div>
+          <h3>Full-Stack Application Core <span>↗</span></h3>
+          <p>A modular application template featuring secure session auth, optimized SQL queries, and responsive client layouts.</p>
+          <div class="project-stack">
+            <span class="stack-tag">#Python</span>
+            <span class="stack-tag">#JavaScript</span>
+            <span class="stack-tag">#REST</span>
           </div>
-          <a href="https://github.com/tnuislostq" class="project-link" target="_blank">View Code &rarr;</a>
         </div>
 
-      </div>
-    </section>
+      </section>
 
-    <footer>
-      <p>© 2026 Tanu Vishwakarma. Built and hosted with GitHub Pages.</p>
-    </footer>
+    </main>
   </div>
 
+  <script>
+    // Smooth Follow Custom Cursor
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorOutline = document.getElementById('cursor-outline');
+
+    let mouseX = 0, mouseY = 0;
+    let outlineX = 0, outlineY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.left = `${mouseX}px`;
+      cursorDot.style.top = `${mouseY}px`;
+    });
+
+    function animateCursor() {
+      // Linear interpolation for smooth trailing
+      outlineX += (mouseX - outlineX) * 0.15;
+      outlineY += (mouseY - outlineY) * 0.15;
+      cursorOutline.style.left = `${outlineX}px`;
+      cursorOutline.style.top = `${outlineY}px`;
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover effect on links and cards
+    const hoverTargets = document.querySelectorAll('a, .project-card, .skill-tag, .photo-card');
+    hoverTargets.forEach((el) => {
+      el.addEventListener('mouseenter', () => cursorOutline.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => cursorOutline.classList.remove('cursor-hover'));
+    });
+
+    // 3D Tilt Effect for Photo Card
+    const photoWrapper = document.getElementById('photo-wrapper');
+    const photoCard = document.getElementById('photo-card');
+
+    if (photoWrapper && photoCard) {
+      photoWrapper.addEventListener('mousemove', (e) => {
+        const rect = photoWrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotateX = -(y / rect.height) * 20;
+        const rotateY = (x / rect.width) * 20;
+        photoCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      photoWrapper.addEventListener('mouseleave', () => {
+        photoCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      });
+    }
+  </script>
 </body>
 </html>
