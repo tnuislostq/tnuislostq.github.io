@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanu Vishwakarma | Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --text-muted: #8b949e;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 0;
+    }
+
+    /* Header / Hero */
+    header {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      color: var(--text-bright);
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-family: 'Fira Code', monospace;
+      margin-bottom: 1rem;
+    }
+
+    .bio {
+      color: var(--text-muted);
+      max-width: 650px;
+      font-size: 1rem;
+    }
+
+    /* Navigation / Quick Links */
+    .links-bar {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .links-bar a {
+      color: var(--text-bright);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-family: 'Fira Code', monospace;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--card-bg);
+      transition: all 0.2s ease;
+    }
+
+    .links-bar a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      margin-top: 3.5rem;
+    }
+
+    h2 {
+      color: var(--text-bright);
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-badge {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-bright);
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    .project-title {
+      color: var(--text-bright);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tech {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .project-link {
+      align-self: flex-start;
+      color: var(--text-bright);
+      font-size: 0.85rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px dashed var(--accent);
+    }
+
+    .project-link:hover {
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Tanu Vishwakarma</h1>
+      <p class="tagline">&gt; Full-Stack Developer &amp; Tech Enthusiast</p>
+      <p class="bio">
+        Passionate about crafting scalable full-stack applications, clean user interfaces, and robust backend systems using React, Django, Python, and Java.
+      </p>
+
+      <div class="links-bar">
+        <a href="https://github.com/tnuislostq" target="_blank">GitHub</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="mailto:your-email@example.com">Email</a>
+      </div>
+    </header>
+
+    <!-- Tech Stack -->
+    <section>
+      <h2>// Skills &amp; Technologies</h2>
+      <div class="skills-grid">
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">Java</span>
+        <span class="skill-badge">React</span>
+        <span class="skill-badge">Django</span>
+        <span class="skill-badge">HTML5 / CSS3</span>
+        <span class="skill-badge">SQL</span>
+        <span class="skill-badge">Git &amp; GitHub</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2>// Featured Projects</h2>
+      <div class="projects-grid">
+        
+        <div class="project-card">
+          <div>
+            <div class="project-title">Adaptive Learning Platform</div>
+            <div class="project-desc">A full-stack system designed to assess skills dynamically and deliver tailored learning paths.</div>
+            <div class="project-tech">React • Django • SQL</div>
+          </div>
+          <a href="https://github.com/tnuislostq" class="project-link" target="_blank">View Code &rarr;</a>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-title">Web Application Architecture</div>
+            <div class="project-desc">A modular web app featuring RESTful APIs, authentication workflows, and relational data management.</div>
+            <div class="project-tech">Python • JavaScript • CSS3</div>
+          </div>
+          <a href="https://github.com/tnuislostq" class="project-link" target="_blank">View Code &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Tanu Vishwakarma. Built and hosted with GitHub Pages.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
