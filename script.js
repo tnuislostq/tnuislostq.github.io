@@ -108,40 +108,37 @@
      and hovering an interactive element expands the crosshair
      arms and shows a short mono label.
   ---------------------------------------------------------- */
-  const crosshair = document.querySelector(".cursor-crosshair");
-  const caret = document.querySelector(".cursor-caret");
-  const label = document.querySelector(".ch-label");
-  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  // --- Smooth Cursor Logic ---
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorRing = document.querySelector('.cursor-ring');
 
-  const HOVER_LABELS = [
-    { selector: ".project-card, .cert-card", text: "view" },
-    { selector: "a[download]", text: "get" },
-    { selector: "a, button", text: "open" },
-  ];
+if (cursorDot && cursorRing) {
+  let mouseX = -100, mouseY = -100;
+  let ringX = -100, ringY = -100;
 
-  if (crosshair && caret && canHover) {
-    window.addEventListener("mousemove", (e) => {
-      const x = e.clientX;
-      const y = e.clientY;
-      crosshair.style.transform = `translate(${x}px, ${y}px)`;
-      caret.style.transform = `translate(${x + 16}px, ${y - 15}px)`;
-    });
+  // Track raw mouse coordinates
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.style.left = `${mouseX}px`;
+    cursorDot.style.top = `${mouseY}px`;
+  });
 
-    document.querySelectorAll("a, button, .project-card, .cert-card, .chip-row li").forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        crosshair.classList.add("is-active");
-        if (label) {
-          const match = HOVER_LABELS.find((h) => el.matches(h.selector));
-          label.textContent = match ? match.text : "";
-        }
-      });
-      el.addEventListener("mouseleave", () => crosshair.classList.remove("is-active"));
-    });
+  // Smooth animation loop for the outer ring
+  function renderCursor() {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    cursorRing.style.left = `${ringX}px`;
+    cursorRing.style.top = `${ringY}px`;
 
-    document.body.style.cursor = "none";
-    document.querySelectorAll("a, button").forEach((el) => (el.style.cursor = "none"));
-  } else if (crosshair && caret) {
-    crosshair.style.display = "none";
-    caret.style.display = "none";
+    requestAnimationFrame(renderCursor);
   }
-})();
+  requestAnimationFrame(renderCursor);
+
+  // Expand ring on hoverable elements
+  const hoverTargets = document.querySelectorAll('a, button, .project-card, .cert-card, input, textarea');
+  hoverTargets.forEach((target) => {
+    target.addEventListener('mouseenter', () => cursorRing.classList.add('is-hovering'));
+    target.addEventListener('mouseleave', () => cursorRing.classList.remove('is-hovering'));
+  });
+}
