@@ -142,3 +142,4 @@ if (cursorDot && cursorRing) {
     target.addEventListener('mouseleave', () => cursorRing.classList.remove('is-hovering'));
   });
 }
+ })(); 
