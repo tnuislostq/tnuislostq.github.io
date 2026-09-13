@@ -112,6 +112,7 @@ img{ max-width: 100%; display: block; }
    CURSOR — terminal-style crosshair
 ============================================================ */
 /* --- Custom Cursor (Smooth Follower) --- */
+/* --- Custom Cursor (Smooth Follower) --- */
 .cursor-dot {
   width: 6px;
   height: 6px;
@@ -121,9 +122,10 @@ img{ max-width: 100%; display: block; }
   left: 0;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999;
   transform: translate(-50%, -50%);
-  transition: opacity 0.2s ease, transform 0.1s ease;
+  transition: opacity 0.2s ease; /* Removed transform transition */
+  will-change: left, top;
 }
 
 .cursor-ring {
@@ -136,19 +138,19 @@ img{ max-width: 100%; display: block; }
   left: 0;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 99998;
   transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  transition: width 0.25s ease, height 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.2s ease;
+  will-change: left, top;
 }
 
-/* Expansion state when hovering over links, buttons, and cards */
+/* Expansion state when hovering over interactive elements */
 .cursor-ring.is-hovering {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   background: rgba(99, 102, 241, 0.15);
   border-color: rgba(99, 102, 241, 0.8);
 }
-
 /* Hide custom cursor on mobile / touch screens */
 @media (hover: none) and (pointer: coarse) {
   .cursor-dot,
