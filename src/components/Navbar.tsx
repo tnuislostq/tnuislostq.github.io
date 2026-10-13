@@ -165,48 +165,18 @@ export const Navbar: React.FC<NavbarProps> = ({
               })}
             </nav>
 
-            {/* Right Action Tools */}
+            {/* Right Action Tools: Only Resume and Theme/Light Switch */}
             <div className="flex items-center gap-2.5">
-              {/* Meet Tanu trigger */}
-              <button
-                onClick={() => openMeetTanu?.()}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-lg bg-[var(--surface)] hover:bg-[var(--surface-elevated)] text-[var(--text-primary)] border border-[var(--border)] transition-all"
-                title="A little more about me"
-              >
-                <span>Bio</span>
-              </button>
-
-              {/* Developer CLI Button */}
-              <button
-                onClick={openTerminal}
-                title="Launch Developer CLI"
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-lg bg-[var(--surface)] hover:bg-[var(--surface-elevated)] text-[var(--text-primary)] border border-[var(--border)] transition-all"
-              >
-                <Terminal className="w-3.5 h-3.5 text-[var(--accent)]" />
-                <span className="hidden sm:inline">CLI</span>
-              </button>
-
               {/* Resume Button */}
               <button
                 onClick={openResume}
-                className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-lg bg-[var(--accent)]/15 text-[var(--accent)] hover:bg-[var(--accent)]/25 border border-[var(--accent)]/30 transition-all"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-medium rounded-lg bg-[var(--accent)]/15 text-[var(--accent)] hover:bg-[var(--accent)]/25 border border-[var(--accent)]/30 transition-all"
               >
                 <FileText className="w-3.5 h-3.5" />
                 <span>Résumé</span>
               </button>
 
-              {/* GitHub Pages ZIP Download */}
-              <a
-                href="/portfolio-github-pages.zip"
-                download="portfolio-github-pages.zip"
-                title="Download GitHub Pages ZIP"
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium rounded-lg bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25 border border-emerald-500/30 transition-all"
-              >
-                <Download className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="hidden sm:inline">ZIP</span>
-              </a>
-
-              {/* Theme Switcher Button */}
+              {/* Theme Switcher Button (Light / Dark) */}
               <div className="scale-90 sm:scale-95">
                 <ThemeSwitch theme={theme} toggleTheme={toggleTheme} />
               </div>
@@ -242,25 +212,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </a>
               ))}
 
-              <div className="pt-3 border-t border-[var(--border)] flex items-center justify-between gap-3">
-                <button
-                  onClick={() => {
-                    openMeetTanu?.();
-                    setIsOpen(false);
-                  }}
-                  className="flex-1 py-2 text-xs font-mono font-medium rounded-lg bg-[var(--surface-elevated)] text-[var(--text-primary)] border border-[var(--border)]"
-                >
-                  Meet Tanu
-                </button>
-
+              <div className="pt-3 border-t border-[var(--border)] flex items-center gap-3">
                 <button
                   onClick={() => {
                     openResume();
                     setIsOpen(false);
                   }}
-                  className="flex-1 py-2 text-xs font-mono font-medium rounded-lg bg-[var(--accent)] text-[var(--accent-contrast)]"
+                  className="w-full py-2.5 text-xs font-mono font-medium rounded-lg bg-[var(--accent)] text-[var(--accent-contrast)] text-center flex items-center justify-center gap-2"
                 >
-                  View Résumé
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>View Résumé</span>
                 </button>
               </div>
             </div>

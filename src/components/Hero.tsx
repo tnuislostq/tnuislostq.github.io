@@ -101,18 +101,6 @@ export const Hero: React.FC<HeroProps> = ({ openTerminal, openResume, openMeetTa
                   <span>CLI</span>
                 </span>
               </button>
-
-              <a
-                href="/portfolio-github-pages.zip"
-                download="portfolio-github-pages.zip"
-                className="button button-secondary personality-button !border-emerald-500/40 hover:!bg-emerald-500/10 text-emerald-400"
-                title="Download complete static bundle for tnuislostq.github.io"
-              >
-                <span className="personality-button__label">
-                  <Download className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Download ZIP</span>
-                </span>
-              </a>
             </div>
 
             {/* Meet Tanu Card Action */}
