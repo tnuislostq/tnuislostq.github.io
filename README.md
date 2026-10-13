@@ -1,28 +1,133 @@
-<div align="center">
+# Tanu Vishwakarma | Portfolio
 
-</div>
+Personal portfolio website for Tanu Kr. Vishwakarma, a Junior Full-Stack Developer. This project showcases projects, technical skills, experience, certifications, and contact information through a modern, interactive single-page portfolio built with React and TypeScript.
 
-# Tanu Vishwakarma — Portfolio
+The site is live at: https://tnuislostq.github.io/
 
-React, TypeScript, and Vite portfolio deployable to GitHub Pages and Vercel.
+## Overview
 
-## Run locally
+This portfolio is designed to present:
 
-**Prerequisite:** Node.js 22 or newer.
+- Full-stack project work and case studies
+- Skills and technologies
+- Education and work experience
+- Certifications and credentials
+- Contact details and resume access
+- A polished interactive UI with theme switching and animated sections
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- CSS
+- Lucide React icons
+- Canvas confetti and motion-based UI effects
+
+## Features
+
+- Responsive portfolio layout
+- Dark/light theme toggle
+- Interactive terminal-style modal
+- Resume modal and profile presentation
+- Animated background and custom cursor effects
+- Dedicated project, skills, certifications, and experience sections
+- Easy deployment to GitHub Pages or Vercel
+
+## Project Structure
+
+```text
+.
+├── public/                  # Static assets
+├── src/
+│   ├── components/          # Reusable UI sections and modals
+│   ├── data/                # Portfolio data/models
+│   ├── types/               # TypeScript types
+│   ├── App.tsx              # Main app shell
+│   ├── index.css            # Global styles and design system
+│   └── main.tsx             # App entry point
+├── .env.example
+├── .gitignore
+├── index.html
+├── metadata.json
+├── package.json
+├── tsconfig.json
+├── vercel.json
+├── vite.config.ts
+├── bun.lock
+├── package-lock.json
+├── README.md
+└── Polished Professional Studio Portrait.png
+```
+
+## Local Development
+
+Prerequisites:
+
+- Node.js 22+
+- npm
+
+Install dependencies:
 
 ```bash
-npm ci
+npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-Open http://localhost:3000.
+The app will run locally at:
 
-## Deploy to GitHub Pages
+```text
+http://localhost:3000
+```
 
-Push the `main` or `master` branch to the `tnuislostq.github.io` repository. The GitHub Actions workflow builds and deploys the site automatically. In the repository settings, open **Pages** and set the source to **GitHub Actions**.
+## Production Build
 
-The site is published at https://tnuislostq.github.io/.
+```bash
+npm run build
+```
 
-## Deploy to Vercel
+Preview the production build:
 
-Import the same GitHub repository in Vercel. The included `vercel.json` configures the install command, build command, and `dist` output directory. Use the repository's `main` branch for production deployments; subsequent pushes will deploy automatically.
+```bash
+npm run preview
+```
+
+## Deployment
+
+### GitHub Pages
+
+This repository is configured for GitHub Pages hosting and can be deployed by pushing to the default branch. After deployment, the portfolio is available at:
+
+```text
+https://tnuislostq.github.io/
+```
+
+### Vercel
+
+The project also includes a `vercel.json` configuration for deployment via Vercel.
+
+## Scripts
+
+```bash
+npm run dev      # Start the app in development mode
+npm run build    # Build the production bundle
+npm run preview  # Preview the production bundle locally
+npm run lint     # Run TypeScript type-checking
+```
+
+## Notes
+
+This repository is a portfolio-focused front-end project intended to showcase the developer's work, certifications, and professional profile. It emphasizes strong visual design, a clean user experience, and quick deployment for static hosting.
+
+## Author
+
+Tanu Vishwakarma
+
+## Repository
+
+https://github.com/tnuislostq/tnuislostq.github.io
