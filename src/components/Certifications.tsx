@@ -34,12 +34,20 @@ export const Certifications: React.FC = () => {
                   onClick={() => setSelectedCert(cert)}
                   className="relative aspect-[16/10] rounded-xl overflow-hidden bg-[var(--surface-elevated)] border border-[var(--border)] cursor-pointer mb-4 group-hover:scale-[1.01] transition-transform"
                 >
-                  <img
-                    src={cert.imageUrl}
-                    alt={cert.title}
-                    className="w-full h-full object-contain p-2"
-                    loading="lazy"
-                  />
+                  {cert.previewUrl ? (
+                    <iframe
+                      src={cert.previewUrl}
+                      title={`${cert.title} certificate preview`}
+                      className="w-full h-full border-0 pointer-events-none"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center gap-2 text-center text-[var(--text-secondary)]">
+                      <Award className="w-8 h-8 text-[var(--accent)]" />
+                      <span className="text-sm font-semibold">Preview unavailable</span>
+                      <span className="max-w-56 text-xs">Make the certificate file publicly viewable to show it here.</span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white text-xs font-mono font-medium">
                     <ZoomIn className="w-4 h-4 text-[var(--accent)]" />
                     <span>Quick Preview</span>

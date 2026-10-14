@@ -371,7 +371,7 @@ export const CERTIFICATIONS: Certificate[] = [
     title: 'AWS Cloud Practitioner',
     issuer: 'GeeksforGeeks / Amazon Web Services',
     date: '2025',
-    imageUrl: 'https://tnuislostq.github.io/assets/certs/aws.png',
+    previewUrl: 'https://media.geeksforgeeks.org/courses/certificates/89892c4aba573ffec8583cd5e1a53730.pdf',
     verifyUrl: 'https://media.geeksforgeeks.org/courses/certificates/89892c4aba573ffec8583cd5e1a53730.pdf',
     skills: ['AWS Cloud Core', 'EC2 & S3', 'IAM Security', 'Cloud Architecture', 'Billing & Cost']
   },
@@ -380,7 +380,7 @@ export const CERTIFICATIONS: Certificate[] = [
     title: 'Full Stack Developer Bootcamp',
     issuer: 'GeeksforGeeks',
     date: '2025',
-    imageUrl: 'https://tnuislostq.github.io/assets/certs/fullstack.png',
+    previewUrl: 'https://media.geeksforgeeks.org/courses/certificates/56e148fadde08a06615b087fc1457364.pdf',
     verifyUrl: 'https://media.geeksforgeeks.org/courses/certificates/56e148fadde08a06615b087fc1457364.pdf',
     skills: ['React', 'Node.js', 'Express', 'Databases', 'Full Stack Architecture']
   },
@@ -389,7 +389,7 @@ export const CERTIFICATIONS: Certificate[] = [
     title: 'JavaScript Programming',
     issuer: 'GeeksforGeeks',
     date: '2025',
-    imageUrl: 'https://tnuislostq.github.io/assets/certs/javascript.png',
+    previewUrl: 'https://media.geeksforgeeks.org/courses/certificates/8f6aad8635816c3951992105d0da2007.pdf',
     verifyUrl: 'https://media.geeksforgeeks.org/courses/certificates/8f6aad8635816c3951992105d0da2007.pdf',
     skills: ['ES6+ Syntax', 'Asynchronous JS', 'DOM Manipulation', 'Event Loop', 'Fetch API']
   },
@@ -398,7 +398,7 @@ export const CERTIFICATIONS: Certificate[] = [
     title: 'Product Management Fundamentals',
     issuer: 'GeeksforGeeks',
     date: '2025',
-    imageUrl: 'https://tnuislostq.github.io/assets/certs/productmgmt.png',
+    previewUrl: 'https://media.geeksforgeeks.org/courses/certificates/2c21ebd113afa2e626e44e16976970d0.pdf',
     verifyUrl: 'https://media.geeksforgeeks.org/courses/certificates/2c21ebd113afa2e626e44e16976970d0.pdf',
     skills: ['User Stories', 'Agile / Scrum', 'Roadmapping', 'Feature Prioritization']
   },
@@ -407,18 +407,18 @@ export const CERTIFICATIONS: Certificate[] = [
     title: 'Professional Soft Skills Course',
     issuer: 'GeeksforGeeks',
     date: '2025',
-    imageUrl: 'https://tnuislostq.github.io/assets/certs/softskills.png',
+    previewUrl: 'https://media.geeksforgeeks.org/courses/certificates/410f8bb2ac20bc31ba332304f211bb7d.pdf',
     verifyUrl: 'https://media.geeksforgeeks.org/courses/certificates/410f8bb2ac20bc31ba332304f211bb7d.pdf',
     skills: ['Cross-functional Collaboration', 'Client Communication', 'Technical Documentation']
   },
   {
     id: 'programming-languages',
-    title: 'Programming Languages & Algorithms',
-    issuer: 'Career Ninja',
+    title: 'Python Programming Language',
+    issuer: 'GeeksforGeeks',
     date: '2025',
-    imageUrl: 'https://tnuislostq.github.io/assets/certs/python.png',
-    verifyUrl: 'https://drive.google.com/file/d/1nzIGgGFDsNlMQJmb6mLayAA4nojIsDqg/view?usp=drivesdk',
-    skills: ['Data Structures', 'Algorithmic Problem Solving', 'Python Scripting']
+    previewUrl: 'https://media.geeksforgeeks.org/courses/certificates/29f8c0c52e6c6a6f32aa79a865bd0e39.pdf',
+    verifyUrl: 'https://media.geeksforgeeks.org/courses/certificates/29f8c0c52e6c6a6f32aa79a865bd0e39.pdf',
+    skills: ['Python', 'Programming Fundamentals', 'Problem Solving']
   }
 ];
 

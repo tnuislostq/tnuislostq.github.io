@@ -40,11 +40,20 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ certificate,
         {/* Certificate Image Preview */}
         <div className="p-4 sm:p-6 overflow-y-auto flex-1 flex flex-col items-center justify-center bg-gray-50 dark:bg-black/40">
           <div className="relative rounded-xl overflow-hidden border border-gray-200 dark:border-gray-750 shadow-md max-w-lg w-full bg-white">
-            <img
-              src={certificate.imageUrl}
-              alt={certificate.title}
-              className="w-full h-auto object-contain max-h-[50vh]"
-            />
+            {certificate.previewUrl ? (
+              <iframe
+                src={certificate.previewUrl}
+                title={`${certificate.title} certificate`}
+                className="w-full h-[50vh] border-0"
+                loading="lazy"
+              />
+            ) : (
+              <div className="min-h-64 p-8 flex flex-col items-center justify-center gap-3 text-center text-gray-600 dark:text-gray-300">
+                <Award className="w-10 h-10 text-amber-500" />
+                <p className="font-semibold">Certificate preview unavailable</p>
+                <p className="text-sm">Make the certificate file publicly viewable to show it here.</p>
+              </div>
+            )}
           </div>
 
           <div className="mt-4 flex flex-wrap justify-center gap-1.5">
