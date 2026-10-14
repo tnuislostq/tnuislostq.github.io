@@ -1,4 +1,4 @@
-# Tanu Vishwakarma | Portfolio
+# Tanu Kr. Vishwakarma | Portfolio
 
 Personal portfolio website for Tanu Kr. Vishwakarma, a Junior Full-Stack Developer. This project showcases projects, technical skills, experience, certifications, and contact information through a modern, interactive single-page portfolio built with React and TypeScript.
 
