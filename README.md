@@ -126,7 +126,7 @@ This repository is a portfolio-focused front-end project intended to showcase th
 
 ## Author
 
-Tanu Vishwakarma
+Tanu Kr. Vishwakarma
 
 ## Repository
 
