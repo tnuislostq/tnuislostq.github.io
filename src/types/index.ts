@@ -32,7 +32,7 @@ export interface Certificate {
   title: string;
   issuer: string;
   date?: string;
-  imageUrl: string;
+  previewUrl?: string;
   verifyUrl: string;
   credentialId?: string;
   skills: string[];
