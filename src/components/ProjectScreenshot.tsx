@@ -38,7 +38,7 @@ export const ProjectScreenshot: React.FC<ProjectScreenshotProps> = ({ project, o
   const displayUrl = project.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
 
   const renderProjectPreview = () => {
-    // Priority: Display real screenshot image if provided (Cake & Crumb, Kinetic Fitness, FlowTrack, etc.)
+    // Priority: Display real screenshot image if provided (Cake & Crumbs, Kinetic Fitness, FlowTrack, etc.)
     if (project.image && !imgError) {
       return (
         <div
@@ -236,7 +236,7 @@ export const ProjectScreenshot: React.FC<ProjectScreenshotProps> = ({ project, o
                 </span>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <span className="font-serif font-bold text-xs sm:text-sm text-[#3e2723]">Cake & Crumb</span>
+                    <span className="font-serif font-bold text-xs sm:text-sm text-[#3e2723]">Cake & Crumbs</span>
                     <span className="text-[8px] font-mono font-bold px-1.5 py-0.2 rounded-full bg-rose-100 text-rose-600">
                       HOME BAKERY
                     </span>

@@ -38,13 +38,13 @@ export const PERSONAL_INFO = {
 export const PROJECTS: Project[] = [
   {
     id: 'cake-and-crumb',
-    title: 'Cake & Crumb',
+    title: 'Cake & Crumbs',
     subtitle: 'Artisan Bakery E-Commerce with WhatsApp Checkout',
     description: 'A vibrant React storefront featuring an interactive custom cake builder, live ingredient pricing, persistent local storage cart, and seamless checkout dispatch via WhatsApp Business API.',
-    detailedDescription: 'Cake & Crumb delivers a delightful digital shopping experience for bespoke baked goods. Customers can customize layers, toppings, and personalized messages with immediate price recalculation, then send the exact formatted order directly to the bakery via WhatsApp.',
+    detailedDescription: 'Cake & Crumbs delivers a delightful digital shopping experience for bespoke baked goods. Customers can customize layers, toppings, and personalized messages with immediate price recalculation, then send the exact formatted order directly to the bakery via WhatsApp.',
     category: 'ecommerce',
     tags: ['React', 'Tailwind CSS', 'WhatsApp Business API', 'Netlify', 'LocalStorage'],
-    liveUrl: 'https://cake-and-crumb.netlify.app',
+    liveUrl: 'https://cake-and-crumbs.netlify.app',
     githubUrl: 'https://github.com/tnuislostq/bakery-website',
     image: '/cake-and-crumb.webp',
     fallbackImage: '/cake-and-crumb.png',
@@ -434,7 +434,7 @@ export const EXPERIENCE_EDUCATION: ExperienceItem[] = [
     achievements: [
       'Built and shipped ASALPS: an adaptive competency assessment platform in Django with relational PostgreSQL models.',
       'Constructed TUKO: an ultra low-latency (<50ms) real-time WebSocket chat app with FastAPI and in-thread AI assistant.',
-      'Developed Cake & Crumb: e-commerce portal with dynamic live cake customization and WhatsApp Business API ordering.',
+      'Developed Cake & Crumbs: e-commerce portal with dynamic live cake customization and WhatsApp Business API ordering.',
       '100% production deployment track record on Render, Netlify, and AWS.'
     ],
     skills: ['React', 'FastAPI', 'Django', 'WebSockets', 'Render', 'PostgreSQL']
