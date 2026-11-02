@@ -104,10 +104,10 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Colophon line */}
         <div className="mt-8 pt-6 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-[var(--text-tertiary)]">
-          <span>Designed & built with React · Full-Stack production architecture</span>
-          <span className="flex items-center gap-1">
-            <span>Chi · Chief Code Companion</span>
-            <span className="text-amber-400">🐾</span>
+          <span>Engineered with React, TypeScript & Python · 100% Deployed</span>
+          <span className="flex items-center gap-2 text-[var(--accent)] font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse" />
+            <span>Open for Full-Stack Roles & High-Impact Teams</span>
           </span>
         </div>
       </div>

@@ -18,8 +18,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           <div className="flex items-center gap-3.5">
             <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-[var(--border)] shadow-xs bg-[var(--bg-secondary)] shrink-0">
               <img
-                src="/chi-the-cat.png"
-                alt="Chi the cat companion"
+                src="/tanu-portrait.jpg"
+                alt="Tanu Vishwakarma profile"
                 className="w-full h-full object-cover"
               />
               <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-[var(--accent)] border-2 border-[var(--surface)]" />
@@ -29,8 +29,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[var(--accent)]/15 text-[var(--accent)] font-bold tracking-wider">
                   VERIFIED CURRICULUM VITAE
                 </span>
-                <span className="text-[10px] font-mono text-[var(--text-tertiary)] flex items-center gap-1">
-                  🐾 Chi Verified
+                <span className="text-[10px] font-mono text-emerald-500 font-bold flex items-center gap-1">
+                  ● Ready for Hire
                 </span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold font-outfit text-[var(--text-primary)]">
@@ -65,22 +65,22 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
           </div>
 
-          {/* Chi the Cat Quality Verification Card */}
+          {/* Verified Engineering Quality Card */}
           <div className="p-3.5 rounded-xl bg-gradient-to-r from-[var(--surface)] to-[var(--surface-sunken)] border border-[var(--border)] flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-xl overflow-hidden border border-[var(--border-strong)] bg-black/10 shrink-0">
               <img
-                src="/chi-the-cat.png"
-                alt="Chi the developer companion cat"
+                src="/tanu-portrait.jpg"
+                alt="Tanu Vishwakarma"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-[var(--accent)]">
-                <Heart className="w-3.5 h-3.5 text-[var(--accent)] inline" />
-                <span>Production-Tested Engineering Standard 🐾</span>
+                <Sparkles className="w-3.5 h-3.5 text-[var(--accent)] inline" />
+                <span>Production-Tested Engineering Standard</span>
               </div>
               <p className="text-[11px] text-[var(--text-secondary)] font-sans mt-0.5">
-                Every project is verified live on Render/Netlify with real screenshots, responsive UX, and production-tested code.
+                Full-stack builds verified live on Render, Netlify & AWS with real API integrations, responsive UX, and production-tested code.
               </p>
             </div>
           </div>

@@ -14,6 +14,8 @@ export interface Project {
   metrics?: string;
   architecture?: string[];
   highlights?: string[];
+  demoGif?: string;
+  demoGifCaption?: string;
 }
 
 export interface SkillCategory {
@@ -48,4 +50,6 @@ export interface ExperienceItem {
   description: string;
   achievements: string[];
   skills: string[];
+  documentUrl?: string;
+  documentLabel?: string;
 }

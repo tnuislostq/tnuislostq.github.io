@@ -13,14 +13,14 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/tnuislostq',
   githubUsername: 'tnuislostq',
   linkedin: 'https://www.linkedin.com/in/tanuvishwakarma',
-  resumeUrl: 'https://tnuislostq.github.io/assets/resume/resume.pdf',
+  resumeUrl: '/resume.pdf',
   liveSiteUrl: 'https://tnuislostq.github.io/',
   availableForHire: true,
-  statusText: 'Full-Stack Developer · React, Next.js & Python',
-  bio: 'I pair Next.js and React front ends with robust Python back ends (Django, FastAPI, Flask) and deploy them to real production URLs — not just git repositories. With 10+ self-driven projects live and working from database schema to cloud deploy, plus AWS Cloud Practitioner certification, I focus on shipping maintainable, user-centric software.',
+  statusText: 'Junior Full-Stack Developer · Intern @ Zynvixs · React & Python',
+  bio: 'Junior Full-Stack Developer and Intern at Zynvixs Pvt. Ltd., pairing React and TypeScript front ends with robust Python back ends (FastAPI, Django, Flask) deployed to real production URLs. With 10 verified live production deployments spanning e-commerce, AI assistants, and enterprise cloud telemetry, plus AWS Cloud Practitioner certification, I focus on shipping maintainable, user-centric software.',
   aboutDetailed: [
-    'I am a Junior Full-Stack Developer passionate about architecting end-to-end web experiences that solve real-world problems.',
-    'Unlike projects that live only on localhost, each of my builds is deployed live on platforms like Render, Netlify, and AWS, with real API integrations (WebSockets, WhatsApp Business API, Generative AI models, and PostgreSQL).',
+    'I am a Junior Full-Stack Developer currently working as a remote Intern at Zynvixs Pvt. Ltd., architecting end-to-end web experiences that solve real-world problems.',
+    'Unlike projects that live only on localhost, each of my builds is deployed live on platforms like Render, Netlify, and AWS, with real API integrations (WebSockets, WhatsApp Business API, OpenAI LLMs, and PostgreSQL).',
     'Certified in AWS Cloud Practitioner and Full Stack Development, I constantly stay curious, practicing clean code architecture, database optimization, and intuitive frontend interactions.'
   ],
   photos: [
@@ -28,14 +28,77 @@ export const PERSONAL_INFO = {
     'https://tnuislostq.github.io/assets/photos/slide-3.jpg'
   ],
   stats: [
-    { label: 'Live Projects', value: '10+', desc: 'Deployed & tested end-to-end' },
+    { label: 'Live Projects', value: '10', desc: '100% verified & deployed' },
+    { label: 'Industry Role', value: 'Intern', desc: 'Zynvixs Pvt. Ltd. (Full-Stack)' },
     { label: 'Certifications', value: '6', desc: 'AWS & GeeksforGeeks verified' },
-    { label: 'Backend Frameworks', value: '3', desc: 'Django, FastAPI, Flask' },
     { label: 'Deployment Rate', value: '100%', desc: 'Zero localhost-only repos' }
   ]
 };
 
 export const PROJECTS: Project[] = [
+  // --- TOP 5 FEATURED PROJECTS (Senior Developer Ranked 1 to 5 with live high-res screenshots) ---
+
+  // #1: AI & Intelligent Systems (Highest market impact, LLM prompt architecture, STAR evaluation)
+  {
+    id: 'ai-monk',
+    title: 'ZenMonk AI',
+    subtitle: 'Mindful AI Interview Mentor & Anxiety Reducer',
+    description: 'An AI-powered mindful interview preparation assistant combining OpenAI LLM mock interview practice with 60-second mindfulness grounding routines to eliminate candidate anxiety.',
+    detailedDescription: 'ZenMonk transforms technical and behavioral interview preparation into focused, calm mastery. Powered by prompt-engineered AI personas (Master Zen Bodhi), real-time answer diagnosis with STAR framework refinement, and ambient mindful grounding, it empowers candidates to turn anxiety into unshakeable composure.',
+    category: 'ai-realtime',
+    tags: ['Python', 'Flask', 'OpenAI API', 'Interview Simulator', 'Render', 'Gunicorn'],
+    liveUrl: 'https://ai-monk-interview-app.onrender.com/',
+    githubUrl: 'https://github.com/tnuislostq/ZenMonk-Mindful-AI-Interview-Mentor',
+    image: '/ai-monk.png',
+    fallbackImage: '/ai-monk.png',
+    demoGif: '/zenmonk-interview-demo.gif',
+    demoGifCaption: 'Live Demo: Master Zen Bodhi AI interview studio, question evaluation & 4-7-8 mindful breathing pacer.',
+    featured: true,
+    metrics: 'Real-time STAR framework diagnosis & 60-sec anxiety reset',
+    architecture: [
+      'Flask backend acting as a secure gateway to OpenAI LLM APIs',
+      'Stateful session buffer preserving interview context across multiple dialogue rounds',
+      'Instant diagnosis engine evaluating clarity, metrics, and structured responses',
+      'Responsive Zen-inspired UI with light/dark theme and ambient focus controls'
+    ],
+    highlights: [
+      'Master Zen Bodhi AI mentor with structured interview simulations',
+      'Instant answer evaluation with 98% clarity feedback',
+      'Integrated 60-second breathing pacer for anxiety reduction',
+      'Live deployment on Render cloud'
+    ]
+  },
+
+  // #2: Enterprise Cloud Architecture & TypeScript (High-information density, telemetry, SOC2, modern B2B SaaS)
+  {
+    id: 'vektor-cloud',
+    title: 'Vektor Cloud',
+    subtitle: 'Enterprise Cloud Infrastructure & Neural IT Operations',
+    description: 'A next-generation enterprise IT infrastructure and neural cloud management platform featuring an interactive telemetry dashboard, autonomous threat mitigation, and microsecond API routing.',
+    detailedDescription: 'Vektor Cloud presents autonomous multi-cloud infrastructure monitoring through a unified enterprise command surface. Built with React and TypeScript, it displays real-time telemetry metrics, automated threat mitigation status, and high-throughput routing diagnostics in a sleek dark glassmorphism interface.',
+    category: 'web',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Cloud Telemetry', 'Vite', 'Netlify'],
+    liveUrl: 'https://vektorcloud.netlify.app/',
+    githubUrl: 'https://github.com/tnuislostq/vektor-cloud-platform',
+    image: '/vektor-cloud.png',
+    fallbackImage: '/vektor-cloud.png',
+    featured: true,
+    metrics: 'Autonomous threat mitigation & microsecond routing',
+    architecture: [
+      'React and TypeScript frontend for an interactive cloud operations dashboard',
+      'Tailwind CSS styling with responsive dark glassmorphism design system',
+      'Telemetry data visualization with multi-cloud monitoring widgets',
+      'Production build deployed on Netlify global CDN'
+    ],
+    highlights: [
+      'Autonomous cloud infrastructure telemetry dashboard',
+      'Enterprise IT operations intelligence interface',
+      'Modern dark glassmorphism visual design',
+      'Live deployment on Netlify'
+    ]
+  },
+
+  // #3: E-Commerce & Commercial Transaction Workflow (Interactive tier customizer, dynamic pricing, WhatsApp API)
   {
     id: 'cake-and-crumb',
     title: 'Cake & Crumbs',
@@ -48,6 +111,8 @@ export const PROJECTS: Project[] = [
     githubUrl: 'https://github.com/tnuislostq/bakery-website',
     image: '/cake-and-crumb.webp',
     fallbackImage: '/cake-and-crumb.png',
+    demoGif: '/cake-customizer-demo.gif',
+    demoGifCaption: 'Live Demo: Real-time cake customizer, flavor & tier selection, dynamic pricing and WhatsApp checkout dispatch.',
     featured: true,
     metrics: 'Direct WhatsApp order dispatch & custom tier builder',
     architecture: [
@@ -63,6 +128,37 @@ export const PROJECTS: Project[] = [
       'Snappy, appetizing mobile UI with Tailwind CSS'
     ]
   },
+
+  // #4: Complex Relational Database & Learning Roadmap Engine (Django, PostgreSQL, adaptive scoring)
+  {
+    id: 'asalps',
+    title: 'ASALPS',
+    subtitle: 'Adaptive Skill Audit & Learning Path System',
+    description: 'A comprehensive full-stack skill-assessment platform that evaluates user competencies and recommends customized, algorithmic learning paths for every learner.',
+    detailedDescription: 'ASALPS solves fragmented self-study by providing dynamic diagnostic tests. As users answer questions, the adaptive backend evaluates skill tiers across various programming languages, generating personalized roadmap roadmaps and tracking completion milestones.',
+    category: 'fullstack',
+    tags: ['Django', 'Python', 'Bootstrap', 'PostgreSQL', 'Render', 'REST API'],
+    liveUrl: 'https://asalps-app.onrender.com',
+    githubUrl: 'https://github.com/tnuislostq/ASALPS.app',
+    image: '/asalps.png',
+    fallbackImage: '/asalps.png',
+    featured: true,
+    metrics: 'Dynamic Diagnostic & Custom Learning Roadmaps',
+    architecture: [
+      'Django ORM with relational schema for questions, skills, and user submissions',
+      'Dynamic scoring engine evaluating knowledge levels across domains',
+      'Session-persisted diagnostics with granular progression analytics',
+      'Continuous deployment pipeline on Render cloud'
+    ],
+    highlights: [
+      'Adaptive diagnostic test engine',
+      'Dynamic curriculum generator based on weak-spot analysis',
+      'Full administrative grading & question pool management',
+      'Mobile-responsive UI built with clean Bootstrap components'
+    ]
+  },
+
+  // #5: Athletic Web Architecture & High-Converting Intake (Dark athletic design, interactive weekly schedule)
   {
     id: 'kinetic-fitness',
     title: 'Kinetic Fitness Studio',
@@ -90,6 +186,8 @@ export const PROJECTS: Project[] = [
       'Modern dark athletic aesthetic'
     ]
   },
+
+  // --- ADDITIONAL LIVE PROJECTS (Archive & Lab builds with verified URLs) ---
   {
     id: 'flow-track',
     title: 'FlowTrack',
@@ -100,9 +198,9 @@ export const PROJECTS: Project[] = [
     tags: ['Flask', 'Python', 'JavaScript', 'Render', 'HealthTech', 'Chart Analytics'],
     liveUrl: 'https://flow-track-w0md.onrender.com',
     githubUrl: 'https://github.com/tnuislostq/flow-track',
-    image: '/flow-track.webp',
+    image: '/flow-track.png',
     fallbackImage: '/flow-track.png',
-    featured: true,
+    featured: false,
     metrics: 'Algorithmic cycle prediction & multi-symptom logging',
     architecture: [
       'Flask backend modeling rolling average cycle periods',
@@ -118,56 +216,6 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: 'sitepulse',
-    title: 'SitePulse',
-    subtitle: 'Production-Ready Website & SEO Audit Engine',
-    description: 'A high-performance asynchronous website audit and security API featuring SSRF protection, distributed scraping, caching, rate limiting, and CI/CD automation.',
-    detailedDescription: 'Built for high reliability under real-world web traffic, SitePulse performs deep automated SEO, security header inspection, and load diagnostics with multi-layered SSRF filtering to safeguard internal cloud networks.',
-    category: 'fullstack',
-    tags: ['FastAPI', 'Python', 'Render', 'SSRF Protection', 'Web Scraping', 'REST API', 'CI/CD'],
-    liveUrl: 'https://sitepulse-audit.onrender.com',
-    githubUrl: 'https://github.com/tnuislostq/SitePulse',
-    featured: true,
-    metrics: 'Asynchronous scraping with SSRF protection & rate limiting',
-    architecture: [
-      'FastAPI asynchronous endpoints with concurrent request workers',
-      'SSRF protection layer intercepting malicious internal IP targets',
-      'In-memory caching and token-bucket rate limiting',
-      'Automated GitHub Actions CI/CD deployment to Render'
-    ],
-    highlights: [
-      'Comprehensive SEO & security header auditing',
-      'Robust SSRF defense preventing internal network leakage',
-      'Interactive Swagger / OpenAPI live documentation',
-      'Containerized and deployed on Render'
-    ]
-  },
-  {
-    id: 'asalps',
-    title: 'ASALPS',
-    subtitle: 'Adaptive Skill Audit & Learning Path System',
-    description: 'A comprehensive full-stack skill-assessment platform that evaluates user competencies and recommends customized, algorithmic learning paths for every learner.',
-    detailedDescription: 'ASALPS solves fragmented self-study by providing dynamic diagnostic tests. As users answer questions, the adaptive backend evaluates skill tiers across various programming languages, generating personalized roadmap roadmaps and tracking completion milestones.',
-    category: 'fullstack',
-    tags: ['Django', 'Python', 'Bootstrap', 'PostgreSQL', 'Render', 'REST API'],
-    liveUrl: 'https://asalps-app.onrender.com',
-    githubUrl: 'https://github.com/tnuislostq/ASALPS.app',
-    featured: true,
-    metrics: 'Dynamic Diagnostic & Custom Learning Roadmaps',
-    architecture: [
-      'Django ORM with relational schema for questions, skills, and user submissions',
-      'Dynamic scoring engine evaluating knowledge levels across domains',
-      'Session-persisted diagnostics with granular progression analytics',
-      'Continuous deployment pipeline on Render cloud'
-    ],
-    highlights: [
-      'Adaptive diagnostic test engine',
-      'Dynamic curriculum generator based on weak-spot analysis',
-      'Full administrative grading & question pool management',
-      'Mobile-responsive UI built with clean Bootstrap components'
-    ]
-  },
-  {
     id: 'tuko',
     title: 'TUKO',
     subtitle: 'Real-Time Chat Application with AI Assistant',
@@ -177,7 +225,9 @@ export const PROJECTS: Project[] = [
     tags: ['React', 'FastAPI', 'WebSockets', 'Python', 'Render', 'AI Integration'],
     liveUrl: 'https://tuko-chat.onrender.com',
     githubUrl: 'https://github.com/tnuislostq/TUKO-chat-application',
-    featured: true,
+    image: '/tuko.png',
+    fallbackImage: '/tuko.png',
+    featured: false,
     metrics: '<50ms WebSocket latency & live AI assistant',
     architecture: [
       'FastAPI WebSocket connection manager handling concurrent broadcast channels',
@@ -193,16 +243,45 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
+    id: 'sitepulse',
+    title: 'SitePulse',
+    subtitle: 'Production-Ready Website & SEO Audit Engine',
+    description: 'A high-performance asynchronous website audit and security API featuring SSRF protection, distributed scraping, caching, rate limiting, and CI/CD automation.',
+    detailedDescription: 'Built for high reliability under real-world web traffic, SitePulse performs deep automated SEO, security header inspection, and load diagnostics with multi-layered SSRF filtering to safeguard internal cloud networks.',
+    category: 'fullstack',
+    tags: ['FastAPI', 'Python', 'Render', 'SSRF Protection', 'Web Scraping', 'REST API', 'CI/CD'],
+    liveUrl: 'https://sitepulse-audit.onrender.com',
+    githubUrl: 'https://github.com/tnuislostq/SitePulse',
+    image: '/sitepulse.png',
+    fallbackImage: '/sitepulse.png',
+    featured: false,
+    metrics: 'Asynchronous scraping with SSRF protection & rate limiting',
+    architecture: [
+      'FastAPI asynchronous endpoints with concurrent request workers',
+      'SSRF protection layer intercepting malicious internal IP targets',
+      'In-memory caching and token-bucket rate limiting',
+      'Automated GitHub Actions CI/CD deployment to Render'
+    ],
+    highlights: [
+      'Comprehensive SEO & security header auditing',
+      'Robust SSRF defense preventing internal network leakage',
+      'Interactive Swagger / OpenAPI live documentation',
+      'Containerized and deployed on Render'
+    ]
+  },
+  {
     id: 'expense-splitter',
-    title: 'Expense Splitter',
-    subtitle: 'Group Tab Tracker with Debt Simplification Algorithm',
+    title: 'TabMate (Expense Splitter)',
+    subtitle: 'Group Tab Tracker with Debt Minimization Algorithm',
     description: 'A smart group tab calculation tool featuring greedy graph algorithms to minimize transaction counts, split bills across uneven groups, and generate clear settlement paths.',
     detailedDescription: 'Built to solve the headache of shared vacation and roommate expenses. The app uses a greedy debt minimization algorithm to collapse multi-party debts into the minimum possible transactions.',
     category: 'fullstack',
     tags: ['Flask', 'Python', 'Greedy Algorithms', 'Debt Simplification', 'Render'],
     liveUrl: 'https://expense-splitter-group-tab-tracker.onrender.com',
     githubUrl: 'https://github.com/tnuislostq/Expense-Splitter-Group-Tab-Tracker',
-    featured: true,
+    image: '/expense-splitter.png',
+    fallbackImage: '/expense-splitter.png',
+    featured: false,
     metrics: 'Minimizes N-party debt graph to minimal transactions',
     architecture: [
       'Greedy algorithm reducing cash transfers among group members',
@@ -214,31 +293,6 @@ export const PROJECTS: Project[] = [
       'Greedy debt reduction graph solver',
       'Simple, intuitive transaction ledger',
       'Live deployment on Render'
-    ]
-  },
-  {
-    id: 'ai-monk',
-    title: 'AI Monk',
-    subtitle: 'Philosophical Conversation & Mindful Dialogue Engine',
-    description: 'An AI-powered conversational application designed to hold stateful, multi-turn philosophical discussions across asynchronous API calls with robust error resilience.',
-    detailedDescription: 'AI Monk transforms mundane Q&A into deep, thought-provoking dialogue. Leveraging prompt engineering, streaming responses, and structured state preservation, it guides users through introspective reflections and Stoic/Eastern philosophical frameworks.',
-    category: 'ai-realtime',
-    tags: ['Python', 'Flask', 'AI APIs', 'Prompt Engineering', 'Render', 'Responsive UI'],
-    liveUrl: 'https://ai-monk-interview-app.onrender.com/',
-    githubUrl: 'https://github.com/tnuislostq/AI-Monk-interview-app',
-    featured: true,
-    metrics: 'Multi-turn context retention & graceful failure recovery',
-    architecture: [
-      'Flask backend acting as a secure gateway to Generative AI APIs',
-      'Stateful session buffer preserving context across multiple rounds of dialogue',
-      'Graceful rate-limit protection and fallback response mechanisms',
-      'Zen-inspired minimalist interface optimized for readability'
-    ],
-    highlights: [
-      'Context-aware multi-turn conversational memory',
-      'Tailored persona prompting for mindful, philosophical synthesis',
-      'Zero-leak API key architecture with backend proxying',
-      'Mobile-first responsive design'
     ]
   },
   {
@@ -263,53 +317,6 @@ export const PROJECTS: Project[] = [
       'Dark and light theme toggle saved to LocalStorage',
       'Fully responsive for all mobile and desktop viewports',
       'Live deployment on GitHub Pages'
-    ]
-  },
-  {
-    id: 'advance-pong',
-    title: 'Advance Pong Arcade',
-    subtitle: 'HTML5 Canvas Arcade Physics & AI Opponent Engine',
-    description: 'An enhanced web-based edition of the classic arcade Pong game featuring advanced collision physics, dynamic paddle speed scaling, score tracking, and an adaptive bot AI opponent.',
-    detailedDescription: 'Developed to master game loop lifecycles and collision geometry in the browser. Features requestAnimationFrame execution, vector calculations for ball reflections, and scalable canvas rendering.',
-    category: 'web',
-    tags: ['JavaScript', 'HTML5 Canvas', 'Game Loop', 'Physics Engine', 'AI Bot'],
-    liveUrl: 'https://github.com/tnuislostq/advance-pong-game',
-    githubUrl: 'https://github.com/tnuislostq/advance-pong-game',
-    featured: false,
-    metrics: '60 FPS continuous canvas loop with custom vector collision',
-    architecture: [
-      'Continuous requestAnimationFrame game update cycle',
-      '2D vector reflection physics for angled paddle deflections',
-      'Heuristic AI tracking paddle simulating human reaction latency'
-    ],
-    highlights: [
-      'Fluid 60 FPS gameplay on HTML5 Canvas',
-      'Dynamic ball velocity acceleration during long rallies',
-      'Single-player mode with smart AI paddle',
-      'Keyboard and touch-friendly controls'
-    ]
-  },
-  {
-    id: 'js-algorithms',
-    title: 'Algorithm & Data Structures Lab',
-    subtitle: 'Interactive DSA & Problem Solving Collection',
-    description: 'A comprehensive collection of algorithmic implementations, data structure libraries, and optimization problem solutions written in modern JavaScript ES6+.',
-    detailedDescription: 'Practical implementations of fundamental computer science patterns: binary trees, graph searches, greedy algorithms, sorting techniques, and recursive problem solvers tested against edge cases.',
-    category: 'fullstack',
-    tags: ['JavaScript ES6+', 'Data Structures', 'Algorithms', 'DSA', 'Problem Solving'],
-    liveUrl: 'https://github.com/tnuislostq/JAVASCRIPT',
-    githubUrl: 'https://github.com/tnuislostq/JAVASCRIPT',
-    featured: false,
-    metrics: 'Optimized time-complexity solutions for algorithmic patterns',
-    architecture: [
-      'Clean modular ES6+ classes for custom data structures',
-      'Comprehensive test assertions for boundary conditions',
-      'Algorithmic complexity notes alongside each implementation'
-    ],
-    highlights: [
-      'Hands-on implementations of essential data structures',
-      'Greedy and dynamic programming solutions',
-      'Clean, commented ES6+ code structure'
     ]
   }
 ];
@@ -424,20 +431,37 @@ export const CERTIFICATIONS: Certificate[] = [
 
 export const EXPERIENCE_EDUCATION: ExperienceItem[] = [
   {
+    id: 'exp-zynvixs',
+    role: 'Junior Full-Stack Developer Intern',
+    company: 'Zynvixs Pvt. Ltd.',
+    period: 'Oct 2026 - Present',
+    location: 'Remote',
+    type: 'experience',
+    description: 'Selected for a 3-month industry internship contributing to practical development tasks, scalable web applications, and AI-driven automation solutions.',
+    achievements: [
+      'Contributing to full-stack feature implementations, component architecture, and responsive user interfaces.',
+      'Collaborating on practical development tasks including API integration, debugging, automated testing, and technical documentation.',
+      'Implementing modern full-stack workflows with React, TypeScript, and backend architectures in an agile development sprint cycle.',
+      'Partnering with lead engineering on component architecture, code reviews, and cross-browser responsiveness.'
+    ],
+    skills: ['React', 'TypeScript', 'Full-Stack Development', 'API Integrations', 'Debugging & Testing', 'Agile Workflow']
+  },
+  {
     id: 'exp-1',
     role: 'Junior Full-Stack Developer (Independent Projects)',
     company: 'Self-Driven Production Builds',
     period: '2024 - Present',
     location: 'Hazaribagh, Jharkhand (Remote)',
     type: 'experience',
-    description: 'Architecting and deploying five end-to-end web applications connecting React frontends with Python backends.',
+    description: 'Architecting and deploying end-to-end web applications connecting React frontends with Python backends.',
     achievements: [
       'Built and shipped ASALPS: an adaptive competency assessment platform in Django with relational PostgreSQL models.',
       'Constructed TUKO: an ultra low-latency (<50ms) real-time WebSocket chat app with FastAPI and in-thread AI assistant.',
       'Developed Cake & Crumbs: e-commerce portal with dynamic live cake customization and WhatsApp Business API ordering.',
-      '100% production deployment track record on Render, Netlify, and AWS.'
+      'Engineered Vektor Cloud: an enterprise cloud infrastructure monitoring command surface with telemetry visualization.',
+      '100% production deployment track record on Netlify, Render, and AWS.'
     ],
-    skills: ['React', 'FastAPI', 'Django', 'WebSockets', 'Render', 'PostgreSQL']
+    skills: ['React', 'FastAPI', 'Django', 'WebSockets', 'Render', 'Netlify', 'PostgreSQL']
   },
   {
     id: 'edu-1',

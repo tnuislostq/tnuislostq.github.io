@@ -250,6 +250,7 @@ export const Projects: React.FC = () => {
               {/* Right Column: Real Interactive Screenshot / Preview Viewport */}
               <div className="lg:col-span-7">
                 <ProjectScreenshot
+                  key={currentProject.id}
                   project={currentProject}
                   onOpenDetails={() => setSelectedProject(currentProject)}
                 />
@@ -349,6 +350,7 @@ export const Projects: React.FC = () => {
                 {/* Screenshot Visual Column */}
                 <div className="order-visual lg:col-span-7">
                   <ProjectScreenshot
+                    key={project.id}
                     project={project}
                     onOpenDetails={() => setSelectedProject(project)}
                   />
