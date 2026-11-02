@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Globe,
   Lock,
@@ -30,9 +30,14 @@ interface ProjectScreenshotProps {
 }
 
 export const ProjectScreenshot: React.FC<ProjectScreenshotProps> = ({ project, onOpenDetails }) => {
-  const [activeTab, setActiveTab] = useState<'preview' | 'arch' | 'metrics'>('preview');
+  const [activeTab, setActiveTab] = useState<'preview' | 'demo' | 'arch' | 'metrics'>('preview');
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    setImgError(false);
+    setActiveTab('preview');
+  }, [project.id]);
 
   // URL display cleanly
   const displayUrl = project.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
@@ -754,6 +759,19 @@ export const ProjectScreenshot: React.FC<ProjectScreenshotProps> = ({ project, o
           >
             Live UI
           </button>
+          {project.demoGif && (
+            <button
+              onClick={() => setActiveTab('demo')}
+              className={`px-2 py-0.5 rounded text-[10px] font-mono transition-all flex items-center gap-1 ${
+                activeTab === 'demo'
+                  ? 'bg-amber-500 text-black font-bold shadow-xs'
+                  : 'text-amber-500/90 hover:text-amber-400 bg-amber-500/10'
+              }`}
+            >
+              <Play className="w-2.5 h-2.5 fill-current" />
+              <span>Demo GIF</span>
+            </button>
+          )}
           <button
             onClick={() => setActiveTab('arch')}
             className={`px-2 py-0.5 rounded text-[10px] font-mono transition-colors ${
@@ -770,6 +788,29 @@ export const ProjectScreenshot: React.FC<ProjectScreenshotProps> = ({ project, o
       {/* Screen Viewport Stage */}
       <div className="aspect-[16/10] sm:aspect-[16/9] w-full relative overflow-hidden bg-[var(--bg-secondary)]">
         {activeTab === 'preview' && renderProjectPreview()}
+
+        {activeTab === 'demo' && project.demoGif && (
+          <div className="relative w-full h-full overflow-hidden bg-black flex items-center justify-center group/gif select-none">
+            <img
+              src={project.demoGif}
+              alt={`${project.title} recorded demo loop`}
+              className="w-full h-full object-cover object-top"
+            />
+            <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-amber-500/40 text-[10px] font-mono text-amber-300 flex items-center gap-1.5 shadow-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+              <span className="font-semibold tracking-wide">Captured Interaction Demo</span>
+            </div>
+            <div className="absolute inset-x-2 bottom-2 p-2.5 rounded-xl bg-black/80 backdrop-blur-md border border-white/10 text-white text-[10px] font-mono flex items-center justify-between opacity-0 group-hover/gif:opacity-100 transition-opacity">
+              <span className="truncate mr-2">{project.demoGifCaption || 'Live workflow recording'}</span>
+              <button
+                onClick={onOpenDetails}
+                className="px-2.5 py-1 rounded-md bg-[var(--accent)] text-[var(--accent-contrast)] font-bold flex items-center gap-1 shrink-0 hover:scale-105 transition-transform"
+              >
+                <span>Case Details</span>
+              </button>
+            </div>
+          </div>
+        )}
 
         {activeTab === 'arch' && (
           <div className="p-4 sm:p-5 bg-[var(--surface)] text-[var(--text-primary)] font-mono text-xs h-full overflow-y-auto space-y-2">

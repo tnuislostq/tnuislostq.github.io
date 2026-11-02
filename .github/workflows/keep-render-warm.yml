@@ -1,0 +1,27 @@
+name: Keep Render Services Warm
+
+on:
+  schedule:
+    # Run every 14 minutes to prevent Render free-tier from sleeping after 15m
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-services:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Deployments
+        run: |
+          URLS=(
+            "https://ai-monk-interview-app.onrender.com/"
+            "https://asalps-app.onrender.com"
+            "https://flow-track-w0md.onrender.com"
+            "https://sitepulse-audit.onrender.com"
+            "https://tuko-chat.onrender.com"
+            "https://expense-splitter-group-tab-tracker.onrender.com"
+          )
+          for url in "${URLS[@]}"; do
+            echo "Pinging $url..."
+            curl -s -o /dev/null -w "%{http_code}" --max-time 25 "$url" || echo "Failed: $url"
+            echo ""
+          done
